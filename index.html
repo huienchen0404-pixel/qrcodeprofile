@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4ed">
+  <meta name="description" content="陳卉恩的個人介紹與學習方向。">
+  <title>陳卉恩｜個人介紹</title>
+
+  <style>
+    :root {
+      --paper: #f7f4ed;
+      --white: #fffefa;
+      --ink: #26332f;
+      --muted: #68756e;
+      --green: #526e60;
+      --green-dark: #344d41;
+      --sage: #dce6dc;
+      --clay: #bd765e;
+      --line: #d9ded5;
+      --serif: Georgia, "Noto Serif TC", "Songti TC", serif;
+      --sans: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--clay);
+      outline-offset: 4px;
+    }
+
+    .skip {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      background: var(--green-dark);
+      color: white;
+      padding: 10px 16px;
+      z-index: 20;
+    }
+
+    .skip:focus {
+      top: 12px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 244, 237, .96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: auto;
+      padding: 12px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: var(--serif);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      font-size: 19px;
+    }
+
+    .navlinks {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .navlinks a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .navlinks a:hover {
+      color: var(--green-dark);
+    }
+
+    .menu-button {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--ink);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font: inherit;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 92px 28px 82px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 72px;
+      align-items: center;
+      min-height: 570px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: .18em;
+      font-weight: 700;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--clay);
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(46px, 7vw, 76px);
+      line-height: 1.15;
+      letter-spacing: .06em;
+      margin: 22px 0 18px;
+      font-weight: 500;
+    }
+
+    .hero-lead {
+      font-family: var(--serif);
+      font-size: clamp(19px, 2.3vw, 25px);
+      color: var(--green-dark);
+      line-height: 1.7;
+      max-width: 540px;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 550px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 20px;
+      border: 1px solid var(--green);
+      text-decoration: none;
+      font-size: 14px;
+      transition: background .2s, color .2s;
+    }
+
+    .button.primary {
+      background: var(--green);
+      color: white;
+    }
+
+    .button.primary:hover {
+      background: var(--green-dark);
+    }
+
+    .button.secondary {
+      color: var(--green-dark);
+    }
+
+    .button.secondary:hover {
+      background: var(--sage);
+    }
+
+    .section {
+      padding: 86px 28px;
+    }
+
+    .section-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      color: var(--clay);
+      font-weight: 700;
+      letter-spacing: .2em;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 24px;
+    }
+
+    .about {
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .about-aside {
+      border-top: 2px solid var(--green);
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about-aside strong {
+      display: block;
+      color: var(--ink);
+      font-size: 19px;
+      font-family: var(--serif);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .about-text {
+      font-size: 18px;
+      line-height: 2;
+      color: #46534d;
+    }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .focus {
+      background: var(--sage);
+    }
+
+    .focus-intro {
+      max-width: 650px;
+      color: #56675d;
+      margin-bottom: 38px;
+    }
+
+    .focus-list {
+      border-top: 1px solid rgba(52, 77, 65, .25);
+    }
+
+    .focus-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(52, 77, 65, .25);
+    }
+
+    .focus-number {
+      font-family: var(--serif);
+      font-size: 26px;
+      color: var(--clay);
+    }
+
+    .focus-item h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+      margin: 0 0 4px;
+    }
+
+    .focus-item p {
+      color: #59695f;
+      margin: 0;
+    }
+
+    .statement {
+      background: var(--green-dark);
+      color: #f8f6ef;
+      padding: 78px 28px;
+      text-align: center;
+    }
+
+    .statement blockquote {
+      max-width: 760px;
+      margin: 0 auto;
+      font-family: var(--serif);
+      font-size: clamp(23px, 3.5vw, 36px);
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .statement p {
+      font-size: 12px;
+      letter-spacing: .18em;
+      color: #cbd8cc;
+      margin: 22px 0 0;
+    }
+
+    footer {
+      background: var(--paper);
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 19px;
+      color: var(--green-dark);
+      letter-spacing: .12em;
+    }
+
+    .backtop {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--green-dark);
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .navlinks {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 4px 0 8px;
+      }
+
+      .navlinks.open {
+        display: flex;
+      }
+
+      .navlinks a {
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding: 64px 22px 58px;
+        min-height: 0;
+      }
+
+      .hero-copy {
+        max-width: 620px;
+      }
+
+      .section {
+        padding: 64px 22px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .about-aside {
+        max-width: 320px;
+      }
+
+      .about-text {
+        font-size: 17px;
+      }
+
+      .statement {
+        padding: 60px 22px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero {
+        padding-top: 48px;
+      }
+
+      h1 {
+        font-size: 44px;
+      }
+
+      .focus-item {
+        grid-template-columns: 46px 1fr;
+        gap: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+
+    @media print {
+      .topbar, .hero-actions, .backtop {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      .hero, .section {
+        padding: 28px 0;
+        min-height: 0;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .about, .focus, .statement {
+        background: white;
+        color: black;
+      }
+
+      a {
+        color: black;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+
+  <header class="topbar">
+    <nav class="nav" aria-label="主要導覽">
+      <a class="brand" href="#home">CHEN HUI-EN</a>
+
+      <button class="menu-button"
+              type="button"
+              aria-expanded="false"
+              aria-controls="navlinks">
+        選單
+      </button>
+
+      <div class="navlinks" id="navlinks">
+        <a href="#about">關於我</a>
+        <a href="#learning">學習方向</a>
+        <a href="#principle">我的想法</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">PERSONAL PROFILE · 自我介紹</div>
+
+        <h1 id="hero-title">陳卉恩</h1>
+
+        <p class="hero-lead">
+          在理解與陪伴之間，持續認識自己，也認識每一個人。
+        </p>
+
+        <p class="hero-copy">
+          你好，我是陳卉恩，畢業於新竹女中，目前就讀於國立臺灣師範大學心輔系。
+          我相信教育應該讓學生自在、快樂地學習，在安心與被尊重的環境中探索興趣、
+          發展自己的可能。
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#about">認識我</a>
+          <a class="button secondary" href="#learning">看看學習方向</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="section-inner about-grid">
+
+        <div>
+          <div class="section-kicker">01 / ABOUT</div>
+          <h2 id="about-title">關於我</h2>
+
+          <div class="about-aside">
+            <strong>陳卉恩</strong>
+            畢業於新竹女中<br>
+            就讀國立臺灣師範大學心輔系
+
+            <p style="margin:14px 0 0">
+              身分資訊依本人提供。
+            </p>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <p>
+            我是陳卉恩，畢業於新竹女中，目前就讀於國立臺灣師範大學心輔系。
+          </p>
+
+          <p>
+            我重視每位學生的獨特性，也相信學習不應只是追求成績。
+            當學生能自在地表達、安心地嘗試，並在快樂的氛圍中探索與成長，
+            學習就能成為一段更有意義的旅程。
+          </p>
+
+          <p>
+            我的教育理念是：讓學生自在、快樂學習。
+            我期許自己持續學習與反思，陪伴學生找到適合自己的步調，
+            發現自己的能力與熱情。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section focus" id="learning" aria-labelledby="learning-title">
+      <div class="section-inner">
+
+        <div class="section-kicker">02 / LEARNING</div>
+        <h2 id="learning-title">學習與探索</h2>
+
+        <p class="focus-intro">
+          心輔領域關注人的心理經驗、成長與人際互動。
+          以下是依科系領域整理的學習主題方向，
+          並非個人修課紀錄或已取得的專業資格。
+        </p>
+
+        <div class="focus-list">
+
+          <article class="focus-item">
+            <div class="focus-number">01</div>
+            <div>
+              <h3>理解心理與情緒</h3>
+              <p>認識人的心理歷程、情緒經驗與個別差異。</p>
+            </div>
+          </article>
+
+          <article class="focus-item">
+            <div class="focus-number">02</div>
+            <div>
+              <h3>關係與溝通</h3>
+              <p>思考人際互動、傾聽、表達與建立關係的方式。</p>
+            </div>
+          </article>
+
+          <article class="focus-item">
+            <div class="focus-number">03</div>
+            <div>
+              <h3>輔導與助人</h3>
+              <p>認識輔導工作的基本概念、倫理與助人專業。</p>
+            </div>
+          </article>
+
+          <article class="focus-item">
+            <div class="focus-number">04</div>
+            <div>
+              <h3>自我覺察與成長</h3>
+              <p>在學習與生活中持續反思，深化對自己與他人的理解。</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="statement" id="principle" aria-labelledby="principle-title">
+      <blockquote id="principle-title">
+        「讓學生自在、快樂地學習，在被理解與被尊重的環境中，
+        自信探索、安心成長。」
+      </blockquote>
+
+      <p>我的教育理念</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-name">陳卉恩</div>
+    <div>個人介紹 · 持續學習，持續理解</div>
+    <a class="backtop" href="#home">回到頁首 ↑</a>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector("#navlinks");
+
+    menuButton.addEventListener("click", () => {
+      const expanded =
+        menuButton.getAttribute("aria-expanded") === "true";
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(!expanded)
+      );
+
+      navLinks.classList.toggle("open", !expanded);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      const link = event.target.closest("a");
+
+      if (!link) return;
+
+      navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  </script>
+
+</body>
+</html>
